@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Apr 29 17:15:01 2020
-
-@author: Abhinav
+@author: Hidam Nganthoiba Singh
 """
 #Project-1
 from textblob import TextBlob
 
-Feedback1 = 'Starbucks Coffee is awesome.'
-Feedback2 = 'Starbucks Coffee was bad.'
-Feedback3 = 'Starbucks Coffee was Ok.'
+Feedback1 = 'Cold Coffee is awesome.'
+Feedback2 = 'Cold Coffee was bad.'
+Feedback3 = 'Cold Coffee was Ok.'
 
 b1 = TextBlob(Feedback1)
 b2 = TextBlob(Feedback2)
@@ -24,7 +22,7 @@ print(b3.sentiment)
 import pandas as pd
 
 #Load data
-dataset = pd.read_csv('F:/pyWork/Text_Mining/PresidentSpeechs/Obama.txt')
+dataset = pd.read_csv('F:/CPMA/pywork/pydata/Obama.txt')
 #Converting data into string format
 dataset = dataset.to_string(index = False) 
 type(dataset)
@@ -38,10 +36,10 @@ dataset = re.sub("[^A-Za-z0-9]+"," ",dataset)
 
 #----------------------Tokenization--------------------------------------------
 import nltk
-#nltk.download()
+nltk.download()
 
-#for word in dataset[:500]:
-    #print(word, sep='',end='')
+for word in dataset[:500]:
+    print(word, sep='',end='')
     
 from nltk.tokenize import word_tokenize
 Tokens = word_tokenize(dataset)
